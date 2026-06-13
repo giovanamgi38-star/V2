@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFFDD0;
+            color: #455A64;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm;
+            box-sizing: border-box;
+            position: relative;
+            page-break-after: always;
+        }
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            text-transform: uppercase;
+            color: #1A237E;
+        }
+        h1 { font-size: 36pt; margin-bottom: 10pt; }
+        h2 { font-size: 24pt; border-bottom: 1px solid #D4AF37; padding-bottom: 5pt; }
+        
+        .section-header {
+            color: #1A237E;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 30pt;
+            border-left: 4px solid #1A237E;
+            padding-left: 10pt;
+        }
+        
+        .editorial-text {
+            line-height: 1.6;
+            font-size: 11pt;
+            margin-bottom: 20pt;
+        }
+        
+        .callout {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16pt;
+            color: #1A237E;
+            margin: 20pt 0;
+            text-align: center;
+        }
+        
+        .dynamic-block {
+            margin-bottom: 25pt;
+        }
+        
+        .dynamic-title {
+            font-weight: bold;
+            color: #1A237E;
+            margin-bottom: 5pt;
+        }
+        
+        .intervention {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #D4AF37;
+            padding: 10pt;
+            margin-top: 10pt;
+        }
+
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .cover h4 {
+            letter-spacing: 5pt;
+            color: #1A237E;
+            margin: 0;
+        }
+        .cover .brand {
+            font-size: 48pt;
+            font-weight: bold;
+            margin: 10pt 0;
+        }
+        .cover .name {
+            font-size: 32pt;
+            margin-top: 50pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="cover">
+            <h4>LECTURA</h4>
+            <div class="brand">SYNTROPY</div>
+            <div class="name">{{name}}</div>
+            <p>{{date}}</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="section-header">Core Essence</div>
+        <div class="callout">"Your essence in a single frequency"</div>
+        <div class="editorial-text">
+            {{coreEssence}}
+        </div>
+
+        <h2>Operational Identifiers</h2>
+        {{#each identifiers}}
+        <div class="dynamic-block">
+            <div class="dynamic-title">{{label}}: {{value}}</div>
+            <div class="editorial-text">{{description}}</div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="page">
+        <h2>Dynamics & Interventions</h2>
+        {{#each dynamics}}
+        <div class="dynamic-block">
+            <div class="dynamic-title">{{title}}</div>
+            <div class="editorial-text">{{description}}</div>
+            <div class="intervention">
+                <strong>Intervention:</strong> {{intervention}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</body>
+</html>
