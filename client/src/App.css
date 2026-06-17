@@ -1,0 +1,166 @@
+:root {
+  --deep-indigo: #1A237E;
+  --celestial-gold: #D4AF37;
+  --antique-cream: #FFFDD0;
+  --slate-gray: #455A64;
+  --indigo-gradient: radial-gradient(circle, #283593 0%, #1A237E 100%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--deep-indigo);
+  color: var(--antique-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.hero-container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--indigo-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Placeholder for celestial pattern */
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+header {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo {
+  width: 180px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 40px 100px;
+  box-sizing: border-box;
+}
+
+.text-section {
+  max-width: 600px;
+  text-align: left;
+}
+
+.tagline {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.form-box {
+  background-color: var(--antique-cream);
+  padding: 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  color: var(--deep-indigo);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-box h2 {
+  margin-top: 0;
+  font-size: 32px;
+  color: var(--deep-indigo);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--slate-gray);
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 15px 30px;
+  background-color: var(--celestial-gold);
+  color: var(--deep-indigo);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #e5be48;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.message.success {
+  color: #2e7d32;
+}
+
+.message.error {
+  color: #c62828;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .text-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .tagline {
+    font-size: 36px;
+  }
+
+  header {
+    justify-content: center;
+    padding: 20px;
+  }
+}
